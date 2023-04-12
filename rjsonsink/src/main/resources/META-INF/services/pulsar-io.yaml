@@ -1,0 +1,4 @@
+name: rjson_sink_connector
+description: Redis JSON sink connector for Pulsar I/O
+sinkClass: com.redis.rjsonsink.RJsonSinkConnector
+sinkConfigClass: com.redis.rjsonsink.RJsonSinkConfig
