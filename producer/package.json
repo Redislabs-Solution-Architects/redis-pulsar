@@ -1,0 +1,17 @@
+{
+  "name": "producer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "producer.js",
+  "scripts": {
+    "start": "node ./src/producer.js"
+  },
+  "keywords": [],
+  "author": "Joey Whelan",
+  "license": "See LICENSE",
+  "dependencies": {
+    "pulsar-client": "^1.8.2",
+    "redis": "^4.6.5"
+  },
+  "type": "module"
+}

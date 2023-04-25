@@ -1,0 +1,17 @@
+{
+  "name": "gear",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gear.js",
+  "scripts": {
+    "build": "npx webpack --config webpack.config.js",
+    "deploy": "echo \"Building\";npm run build;echo \"Deploying\";redis-cli -x RG.FUNCTION LOAD UPGRADE < ./dist/main.js"
+  },
+  "keywords": [],
+  "author": "Joey Whelan",
+  "license": "See License",
+  "devDependencies": {
+    "webpack": "^5.80.0",
+    "webpack-cli": "^5.0.1"
+  }
+}

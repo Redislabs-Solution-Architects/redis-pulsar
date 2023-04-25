@@ -1,0 +1,10 @@
+{
+    "key": "doc:9999",
+    "path": "$",
+    "value": {
+        "symbol": "AA",
+        "metric_1": 25,
+        "metric_2": 10.5,
+        "metric_3": 1000
+    }
+}
