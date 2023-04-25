@@ -1,0 +1,16 @@
+{
+  "name": "consumer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/consumer.js"
+  },
+  "keywords": [],
+  "author": "Joey Whelan",
+  "license": "See License",
+  "type": "module",
+  "dependencies": {
+    "redis": "^4.6.5"
+  }
+}

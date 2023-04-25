@@ -1,0 +1,3 @@
+name: normalizer_function
+description: Pulsar function for normalizing numeric metrics
+functionClass: com.redis.normalizer.NormalizerFunction

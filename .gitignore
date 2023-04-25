@@ -7,3 +7,5 @@ generated-test-sources
 maven-archiver
 maven-status
 test-classes
+node_modules
+dist

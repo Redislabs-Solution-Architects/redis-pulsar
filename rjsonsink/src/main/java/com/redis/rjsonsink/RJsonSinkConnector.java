@@ -44,9 +44,9 @@ public class RJsonSinkConnector implements Sink<byte[]> {
     public void write(Record<byte[]> record) throws Exception {
         Runnable task = () -> {
             try {
-                String key = record.getKey().orElseThrow();
                 String recordValue = new String(record.getValue(), StandardCharsets.UTF_8);
                 JSONObject document = new JSONObject(recordValue);
+                String key = document.getString("key");
                 Path2 path = new Path2(document.getString("path"));
                 JSONObject value = document.getJSONObject("value");
                 log.info("Writing - key: " + key + " value: " + value + " path: " + path);

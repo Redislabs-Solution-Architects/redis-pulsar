@@ -1,0 +1,37 @@
+services:
+
+#Redis 7.2 Release Candidate + Gears 2.0
+  rc2:
+    build: .
+    container_name: rc2
+    ports:
+      - "6379:6379"
+    networks:
+      re_pulsar:
+        ipv4_address: 192.168.20.2
+
+# Pulsar standalone
+  pulsar:
+    image: apachepulsar/pulsar-all:latest
+    container_name: pulsar
+    hostname: pulsar
+    restart: on-failure
+    networks:
+      re_pulsar:
+        ipv4_address: 192.168.20.3
+    volumes:
+      - ../rjsonsink/target/rjsonsink-0.0.1.nar:/pulsar/connectors/rjsonsink-0.0.1.nar
+      - ../normalizer/target/normalizer-0.0.1.nar:/pulsar/functions/normalizer-0.0.1.nar
+    ports:
+      - "6650:6650"
+      - "8080:8080"
+    command: bash -c "exec bin/pulsar standalone"
+
+networks:
+  re_pulsar:
+    name: re_net
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.20.0/24
