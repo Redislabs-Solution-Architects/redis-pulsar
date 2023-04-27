@@ -1,11 +1,6 @@
 *.zip
 *.jar
 .vscode
-classes
-generated-sources
-generated-test-sources
-maven-archiver
-maven-status
-test-classes
+target
 node_modules
 dist
