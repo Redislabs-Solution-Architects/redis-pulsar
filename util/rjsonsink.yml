@@ -1,5 +1,0 @@
-configs:
-  redisHost: "192.168.20.2"
-  redisPort: "6379"
-  redisUser: "default"
-  redisPassword: ""

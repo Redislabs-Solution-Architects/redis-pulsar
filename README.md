@@ -8,6 +8,7 @@
 5.  [Prerequisites](#prerequisites)
 6.  [Installation](#installation)
 7.  [Usage](#usage)
+8.  [Execution](#execution)
 
 ## Summary <a name="summary"></a>
 This implements a continous query update architecture by integrating Apache Pulsar, Redis Gears, Redis Search, and Redis Search.  The data transfers and transforms simulate a stock trading desk domain.
@@ -39,6 +40,11 @@ git clone https://github.com/Redislabs-Solution-Architects/redis-pulsar.git && c
 
 ## Usage <a name="usage"></a>
 
+### Compile Source
+```bash
+./build.sh
+```
+
 ### Pulsar + Redis start up
 ```bash
 ./start.sh
@@ -59,7 +65,8 @@ cd ../producer && npm start
 ./stop.sh
 ```
 
-## Execution - Producer <a name="producer"></a>
+## Execution <a name="execution"></a>
+### Producer 
  ```bash
 > producer@1.0.0 start
 > node ./src/producer.js
@@ -76,7 +83,7 @@ sending: {"key":"doc:CC:M2:8","path":"$","value":{"symbol":"CC","M2":707502.17}}
 sending: {"key":"doc:DD:M1:9","path":"$","value":{"symbol":"DD","M1":27.68}}
  ```
 
- ## Execution - Consumer <a name="consumer"></a>
+ ### Consumer
  ```bash
 > consumer@1.0.0 start
 > node ./src/consumer.js

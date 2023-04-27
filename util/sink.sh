@@ -3,22 +3,19 @@
 # Usage: sink.sh
 # Description:  Utility to manage Pulsar sink operations
 
-NAR=${PWD}/../rjsonsink/target/rjsonsink-0.0.1.nar
-PULSAR_HOME=/home/joeywhelan/apache-pulsar-2.11.0
-
 case $1 in
     create)
-        $PULSAR_HOME/bin/pulsar-admin --admin-url http://localhost:8080 \
+        docker exec pulsar /pulsar/bin/pulsar-admin --admin-url http://localhost:8080 \
         sinks create \
         --tenant public \
         --namespace default \
         --sink-type rjson_sink_connector \
         --name rjsonSink \
-        --sink-config-file ${PWD}/rjsonsink.yml \
+        --sink-config '{"redisHost": "192.168.20.2","redisPort": "6379","redisUser": "default","redisPassword": ""}' \
         --inputs redis-topic
         ;;
     status)
-        $PULSAR_HOME/bin/pulsar-admin --admin-url http://localhost:8080 \
+        docker exec pulsar /pulsar/bin/pulsar-admin --admin-url http://localhost:8080 \
         sinks status \
         --name rjsonSink
         ;;

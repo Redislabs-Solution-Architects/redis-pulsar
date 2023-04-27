@@ -15,5 +15,5 @@ echo "*** Create RJson Sink ***"
 echo "*** Create Normalizer Function ***"
 ./function.sh create
 
-echo "*** Build and Deploy Redis Gear ***"
-cd ../gear && npm run build && npm run deploy && cd -
+echo "*** Deploy Redis Gear ***"
+cd ../gear && npm run deploy && cd -
